@@ -9,8 +9,6 @@
 import UIKit
 
 class LoginVC: UIViewController {
-
-    @IBOutlet weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
