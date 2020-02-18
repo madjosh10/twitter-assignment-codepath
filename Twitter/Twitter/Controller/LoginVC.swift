@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginVC: UIViewController {
     
@@ -15,5 +16,16 @@ class LoginVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func loginClicked(_ sender: Any) {
+        let URL = "https://api.twitter.com/oauth/request_token"
+        
+        TwitterAPICaller.client?.login(url: URL, success: {
+            self.performSegue(withIdentifier: "loginToHome", sender: self)
+        }, failure: { (Error) in
+            print("Could not log in!")
+        })
+    }
+    
 
-} // 
+} // end LoginVC
