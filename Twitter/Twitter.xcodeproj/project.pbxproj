@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37D29B8621F90E3400984A88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37D29B8521F90E3400984A88 /* Assets.xcassets */; };
+		4274333123FB916F0031E678 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4274333023FB916F0031E678 /* HomeVC.swift */; };
 		428F062323F48E8C002B2CB3 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428F062223F48E8C002B2CB3 /* LoginVC.swift */; };
 		428F062523F48F0C002B2CB3 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428F062423F48F0C002B2CB3 /* RoundButton.swift */; };
 		504CFC1F641D05B5D40A0F17 /* Pods_Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872C2D82F41D5A5D2A920E9E /* Pods_Twitter.framework */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		37D29B8521F90E3400984A88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4274333023FB916F0031E678 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		428F062223F48E8C002B2CB3 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		428F062423F48F0C002B2CB3 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		4CEB8A6500C9DFD9CEF16FBF /* Pods-Twitter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter/Pods-Twitter.debug.xcconfig"; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				428F062223F48E8C002B2CB3 /* LoginVC.swift */,
+				4274333023FB916F0031E678 /* HomeVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				428F062523F48F0C002B2CB3 /* RoundButton.swift in Sources */,
+				4274333123FB916F0031E678 /* HomeVC.swift in Sources */,
 				6EBCF54421E047A500451C03 /* TwitterAPICaller.swift in Sources */,
 				6EBCF52621DF07FC00451C03 /* AppDelegate.swift in Sources */,
 				428F062323F48E8C002B2CB3 /* LoginVC.swift in Sources */,

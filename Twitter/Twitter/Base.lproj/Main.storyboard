@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="cSC-oJ-ecW">
-                                <rect key="frame" x="20" y="104" width="335" height="335"/>
+                                <rect key="frame" x="20" y="104" width="335" height="340"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TwitterLogoBlue" translatesAutoresizingMaskIntoConstraints="NO" id="BvL-o6-Eze">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="240"/>
@@ -27,10 +27,10 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zor-46-i0n" customClass="RoundButton" customModule="Twitter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="290" width="335" height="45"/>
+                                        <rect key="frame" x="0.0" y="290" width="335" height="50"/>
                                         <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="Fo6-qH-afc"/>
+                                            <constraint firstAttribute="height" constant="50" id="Fo6-qH-afc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <state key="normal" title="Login with Twitter">
@@ -64,10 +64,10 @@
             </objects>
             <point key="canvasLocation" x="180" y="111"/>
         </scene>
-        <!--Timeline-->
+        <!--Home-->
         <scene sceneID="pzt-Ky-UNy">
             <objects>
-                <tableViewController id="b1H-01-Vt8" sceneMemberID="viewController">
+                <tableViewController id="b1H-01-Vt8" customClass="HomeVC" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vC7-lv-0xH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="b1H-01-Vt8" id="rHq-6o-2bi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Timeline" id="kp6-9C-xCA"/>
+                    <navigationItem key="navigationItem" title="Home" id="kp6-9C-xCA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQi-ag-OSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,9 +97,14 @@
         <scene sceneID="ImC-02-hp6">
             <objects>
                 <navigationController id="YQH-Ff-QvL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qMt-Y2-o54">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="qMt-Y2-o54">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="b1H-01-Vt8" kind="relationship" relationship="rootViewController" id="M0C-Pr-w3t"/>
