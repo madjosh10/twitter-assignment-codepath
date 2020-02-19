@@ -87,7 +87,13 @@
                             <outlet property="delegate" destination="b1H-01-Vt8" id="rHq-6o-2bi"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Home" id="kp6-9C-xCA"/>
+                    <navigationItem key="navigationItem" title="Home" id="kp6-9C-xCA">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="a3L-l9-9lh">
+                            <connections>
+                                <action selector="logOutPressed:" destination="b1H-01-Vt8" id="J2S-5J-4vd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zQi-ag-OSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

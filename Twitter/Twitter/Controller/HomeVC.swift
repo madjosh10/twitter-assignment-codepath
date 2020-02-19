@@ -12,12 +12,8 @@ class HomeVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        
     }
 
     // MARK: - Table view data source
@@ -32,6 +28,10 @@ class HomeVC: UITableViewController {
         return 0
     }
 
+    @IBAction func logOutPressed(_ sender: Any) {
+        TwitterAPICaller.client?.logout()
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

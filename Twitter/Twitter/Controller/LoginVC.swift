@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class LoginVC: UIViewController {
     
@@ -22,6 +21,8 @@ class LoginVC: UIViewController {
         
         TwitterAPICaller.client?.login(url: URL, success: {
             self.performSegue(withIdentifier: "loginToHome", sender: self)
+            UserDefaults.standard.set(true, forKey: "userIsLoggedIn")
+            
         }, failure: { (Error) in
             print("Could not log in!")
         })
