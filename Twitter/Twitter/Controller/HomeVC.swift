@@ -31,6 +31,7 @@ class HomeVC: UITableViewController {
     @IBAction func logOutPressed(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
+        UserDefaults.standard.set(false, forKey: "userIsLoggedIn")
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
