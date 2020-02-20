@@ -9,40 +9,67 @@
 import UIKit
 
 class HomeVC: UITableViewController {
-
+    
+    var tweetArray = [NSDictionary]()
+    var numberOfTweets: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadTweets()
         
+    }
+    
+    func loadTweets() {
         
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        let parameter = ["count": 10]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: parameter, success: { (tweets: [NSDictionary]) in
+            
+            self.tweetArray.removeAll()
+            for tweet in tweets {
+                self.tweetArray.append(tweet)
+            }
+            
+            self.tableView.reloadData()
+            
+        }, failure: { (Error) in
+            print("Could not load tweets..")
+        })
+    } // end loadTweets
 
     @IBAction func logOutPressed(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
         UserDefaults.standard.set(false, forKey: "userIsLoggedIn")
-    }
-    /*
+    } // end logOutPressed
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCell
+        let user  = tweetArray[indexPath.row]["user"] as! NSDictionary
+        let tweet = tweetArray[indexPath.row]["text"] as! String
+        
+        cell.userName.text = user["name"] as? String
+        cell.tweetContent.text = tweet
+        
+        
         return cell
     }
-    */
 
+    // MARK: - Table view data source
+
+     override func numberOfSections(in tableView: UITableView) -> Int {
+         
+         return 1
+     }
+
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         
+        return tweetArray.count
+     }
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
