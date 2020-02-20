@@ -23,11 +23,11 @@ class HomeVC: UITableViewController {
     }
     
     @objc func loadTweets() {
-        
+        numberOfTweets = 20
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let parameter = ["count": 10]
+        let parameter = ["count": numberOfTweets]
         
-        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: parameter, success: { (tweets: [NSDictionary]) in
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: parameter as [String : Any], success: { (tweets: [NSDictionary]) in
             
             self.tweetArray.removeAll()
             for tweet in tweets {
@@ -42,6 +42,27 @@ class HomeVC: UITableViewController {
         })
     } // end loadTweets
 
+    @objc func loadMoreTweets() {
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        numberOfTweets += 20
+        let parameter = ["count": numberOfTweets]
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: parameter as [String : Any], success: { (tweets: [NSDictionary]) in
+            
+            self.tweetArray.removeAll()
+            for tweet in tweets {
+                self.tweetArray.append(tweet)
+            }
+            
+            self.tableView.reloadData()
+            
+        }, failure: { (Error) in
+            print("Could not load tweets..")
+        })
+        
+    } // end loadMoreTweets
+    
+    
+    
     @IBAction func logOutPressed(_ sender: Any) {
         TwitterAPICaller.client?.logout()
         self.dismiss(animated: true, completion: nil)
