@@ -3,6 +3,7 @@
 TwitterCli is a basic twitter app to read your tweets.
 
 Time spent: **6** hours spent in total for part 1
+Time spent: **X** hours spent in total for part 2
 
 ## User Stories
 
