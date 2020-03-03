@@ -127,14 +127,16 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Home" id="kp6-9C-xCA">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="a3L-l9-9lh">
+                            <color key="tintColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="logOutPressed:" destination="b1H-01-Vt8" id="J2S-5J-4vd"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Tweet" style="plain" id="AcI-Nv-YUJ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B21-dc-8a2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B21-dc-8a2">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Tweet"/>
                                 <connections>
                                     <segue destination="aod-HB-VYe" kind="presentation" id="zR5-i6-QIT"/>
@@ -156,7 +158,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="whats happening?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vPh-6V-mYJ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vPh-6V-mYJ">
                                 <rect key="frame" x="0.0" y="57" width="375" height="200"/>
                                 <color key="backgroundColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -193,7 +195,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="81z-h8-L9a">
                                 <rect key="frame" x="276" y="13" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Tweet">
+                                <state key="normal" title="Post">
                                     <color key="titleColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -203,6 +205,9 @@
                             <color key="tintColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tweetTextField" destination="vPh-6V-mYJ" id="zEZ-6U-dMz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ys-Z1-lcn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
