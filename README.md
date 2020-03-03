@@ -21,3 +21,15 @@ The following **bonus** features are implemented:
 
 
 
+# Building Twitter part 2
+
+## Overview
+In this assignment, we'll be extending our Twitter app to add the ability to compose, favorite, and retweet tweets.
+
+
+## Bonus User stories
+
+1. When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 140).
+  - Feature Guide: Character Count down
+
+
