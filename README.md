@@ -3,7 +3,7 @@
 TwitterCli is a basic twitter app to read your tweets.
 
 Time spent: **6** hours spent in total for part 1
-Time spent: **X** hours spent in total for part 2
+Time spent: **5** hours spent in total for part 2
 
 ## User Stories
 
@@ -23,6 +23,7 @@ The following **bonus** features are implemented:
 
 
 # Building Twitter part 2
+![Webp net-gifmaker-5](https://user-images.githubusercontent.com/22626710/75920360-d1ce1900-5e24-11ea-81b6-4069d55ae1dd.gif)
 
 ## Overview
 In this assignment, we'll be extending our Twitter app to add the ability to compose, favorite, and retweet tweets.
